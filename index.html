@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#fff0f5">
+  <meta name="description" content="A little birthday surprise made with love for Tiara Azita Safitri.">
+  <title>For Tiara, With Love ♡</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Great+Vibes&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --rose: #d96f98;
+      --rose-deep: #984665;
+      --rose-soft: #f8d9e5;
+      --ink: #684452;
+      --muted: #a27b89;
+      --paper: rgba(255, 251, 249, .88);
+      --line: rgba(255, 255, 255, .9);
+      --shadow: 0 28px 90px rgba(139, 65, 96, .16);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      min-height: 100vh;
+      padding: clamp(18px, 4vw, 48px) 16px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow-x: hidden;
+      position: relative;
+      isolation: isolate;
+      color: var(--ink);
+      font-family: 'DM Sans', sans-serif;
+      background:
+        radial-gradient(ellipse at 12% 12%, rgba(255,255,255,.9), transparent 30%),
+        radial-gradient(ellipse at 90% 80%, rgba(255,215,229,.9), transparent 34%),
+        linear-gradient(135deg, #ffe4ed 0%, #fff8f2 48%, #f9dce8 100%);
+    }
+    body::before, body::after {
+      content: ""; position: fixed; z-index: -1; pointer-events: none;
+      width: min(42vw, 390px); aspect-ratio: 1; border-radius: 50%;
+      filter: blur(75px); opacity: .55; animation: glow 10s ease-in-out infinite alternate;
+    }
+    body::before { background: #ffb6d0; top: -120px; left: -100px; }
+    body::after { background: #ffd9b6; bottom: -130px; right: -100px; animation-delay: 2s; }
+    @keyframes glow { to { transform: scale(1.16) translate(12px, 10px); } }
+
+    .sparkle {
+      position: fixed; z-index: -1; color: rgba(183, 90, 126, .55);
+      pointer-events: none; animation: twinkle 3s ease-in-out infinite;
+    }
+    @keyframes twinkle { 0%,100% { opacity: .25; transform: scale(.8) rotate(0deg); } 50% { opacity: .9; transform: scale(1.2) rotate(25deg); } }
+
+    .petal {
+      position: fixed; top: -40px; z-index: 4; pointer-events: none;
+      opacity: .7; animation: fall linear infinite;
+      filter: drop-shadow(0 2px 3px #d77f9a22);
+    }
+    @keyframes fall {
+      0% { transform: translate3d(0,-5vh,0) rotate(0deg); opacity: 0; }
+      12% { opacity: .75; }
+      88% { opacity: .65; }
+      100% { transform: translate3d(45px,110vh,0) rotate(600deg); opacity: 0; }
+    }
+
+    .opening {
+      position: fixed; inset: 0; z-index: 20; display: grid; place-items: center;
+      padding: 20px; background:
+        radial-gradient(ellipse at 20% 15%, rgba(255,255,255,.95), transparent 34%),
+        linear-gradient(135deg, #ffe2ec, #fff7f0, #f8d5e3);
+      transition: opacity .75s ease, visibility .75s ease;
+    }
+    .opening.hide { opacity: 0; visibility: hidden; pointer-events: none; }
+    .envelope-card {
+      position: relative; width: min(100%, 470px); padding: clamp(30px, 6vw, 48px) clamp(22px, 5vw, 42px);
+      text-align: center; border: 1px solid #ffffffdf; border-radius: 32px;
+      background: rgba(255, 251, 249, .8); box-shadow: var(--shadow);
+      backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px);
+      animation: rise .9s cubic-bezier(.2,.8,.2,1) both;
+    }
+    .envelope-card::before {
+      content: "✦"; position: absolute; top: 18px; right: 25px;
+      color: #d98aa8; font-size: 21px; animation: twinkle 3s infinite;
+    }
+    @keyframes rise { from { opacity: 0; transform: translateY(22px) scale(.97); } to { opacity: 1; transform: translateY(0) scale(1); } }
+    .opening-flower { font-size: clamp(42px, 8vw, 56px); animation: float 3s ease-in-out infinite; }
+    @keyframes float { 50% { transform: translateY(-8px) rotate(7deg); } }
+    .eyebrow { margin-top: 16px; color: var(--muted); font-size: 10px; font-weight: 700; letter-spacing: .24em; text-transform: uppercase; }
+    .opening h1 { margin: 12px 0; color: var(--rose-deep); font: 400 clamp(43px, 8vw, 60px)/1.2 'Great Vibes', cursive; }
+    .opening-text { max-width: 310px; margin: auto; font-size: 13px; line-height: 1.9; color: #866271; }
+    .envelope { margin: 24px 0; font-size: clamp(60px, 10vw, 80px); filter: drop-shadow(0 10px 14px #d78aaa3a); animation: pulse 2s ease-in-out infinite; }
+    @keyframes pulse { 50% { transform: scale(1.08) rotate(-3deg); } }
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+      min-height: 46px; border: 0; border-radius: 999px; padding: 13px 25px; cursor: pointer;
+      color: white; font: 700 12px 'DM Sans', sans-serif; letter-spacing: .04em;
+      background: linear-gradient(135deg, #e99ab5, #b94c77);
+      box-shadow: 0 10px 26px #d98da84d; transition: transform .25s, box-shadow .25s, filter .25s;
+    }
+    .btn:hover { transform: translateY(-3px); box-shadow: 0 14px 30px #d98da866; filter: saturate(1.08); }
+    .btn:focus-visible { outline: 3px solid #a8476b; outline-offset: 4px; }
+    .opening-footer { margin-top: 24px; color: #b17c91; font-size: 10px; letter-spacing: .12em; }
+
+    .container { width: min(100%, 960px); opacity: 0; visibility: hidden; }
+    .container.show { opacity: 1; visibility: visible; animation: rise .95s ease both; }
+    .top-text { text-align: center; margin: 0 auto 24px; }
+    .top-text .small { margin-bottom: 8px; color: var(--rose-deep); font-size: 10px; font-weight: 700; letter-spacing: .24em; text-transform: uppercase; }
+    .top-text h1 { color: #b64f75; font: 400 clamp(49px, 9vw, 82px)/1.15 'Great Vibes', cursive; text-shadow: 0 5px 22px #eeb0c566; }
+    .top-text p { margin-top: 9px; font-size: 10px; font-weight: 600; letter-spacing: .18em; color: #9c6c7d; }
+    .tiny-line { width: 54px; height: 2px; margin: 15px auto 0; border-radius: 99px; background: linear-gradient(90deg, transparent, #d77f9e, transparent); }
+
+    .card {
+      position: relative; isolation: isolate; overflow: hidden;
+      padding: clamp(25px, 5.5vw, 58px);
+      border: 1px solid var(--line); border-radius: clamp(24px, 4vw, 36px);
+      background: var(--paper); box-shadow: var(--shadow);
+      backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
+    }
+    .card::before, .card::after { position: absolute; z-index: -1; color: #f1b8cc; opacity: .27; line-height: 1; animation: sway 6s ease-in-out infinite; pointer-events: none; }
+    .card::before { content: '✿'; top: -18px; right: 8px; font-size: clamp(80px, 13vw, 135px); }
+    .card::after { content: '❀'; bottom: -35px; left: -12px; font-size: clamp(100px, 15vw, 160px); animation-direction: reverse; }
+    @keyframes sway { 50% { transform: rotate(12deg); } }
+    .inner { position: relative; z-index: 1; text-align: center; }
+    .date-pill { display: inline-flex; align-items: center; gap: 8px; margin-bottom: 17px; padding: 8px 14px; border: 1px solid #f2c8d7; border-radius: 999px; background: #fff7fa; color: #a65b76; font-size: 10px; font-weight: 700; letter-spacing: .12em; }
+    .heart { display: block; color: #ce638a; font-size: 27px; animation: heartbeat 1.5s ease-in-out infinite; }
+    @keyframes heartbeat { 50% { transform: scale(1.2); } }
+    h2 { margin: 12px 0 1px; font: 400 clamp(22px, 4vw, 32px)/1.35 'Playfair Display', serif; }
+    .name { margin-bottom: 8px; color: #bd557b; font: 400 clamp(43px, 9vw, 80px)/1.25 'Great Vibes', cursive; overflow-wrap: anywhere; }
+    .flower-divider { margin: 18px 0; color: #d987a4; letter-spacing: .35em; }
+    .message { max-width: 660px; margin: auto; font-size: clamp(13px, 1.6vw, 14px); font-weight: 400; line-height: 2; }
+    .message p { margin: 0 0 16px; }
+    .message strong { color: #9e496a; }
+    .quote { position: relative; max-width: 590px; margin: 26px auto; padding: 19px 24px; border: 1px solid #f3d2dd; border-radius: 18px; background: linear-gradient(135deg, #fff3f7, #fffaf8); color: #9b5470; font: italic 400 clamp(14px, 2vw, 16px)/1.85 'Playfair Display', serif; box-shadow: 0 10px 30px rgba(178, 90, 124, .06); }
+    .signature { margin: 19px 0; color: #bd597b; font: 400 clamp(32px, 6vw, 42px)/1.3 'Great Vibes', cursive; }
+    .secret { display: none; max-width: 680px; margin: 23px auto 0; padding: clamp(18px, 4vw, 28px); border: 1px dashed #e7a5ba; border-radius: 22px; background: linear-gradient(135deg, #fff4f7, #fffaf7); font-size: 13px; line-height: 1.95; box-shadow: inset 0 0 28px rgba(235, 173, 195, .08); }
+    .secret.show { display: block; animation: rise .6s ease both; }
+    .secret p { margin-top: 12px; }
+    .secret-title { color: #a8476b; font-family: 'Playfair Display', serif; }
+    .bottom-heart { margin-top: 28px; color: #c76b8b; font-size: 10px; font-weight: 700; letter-spacing: .12em; }
+    .footer { margin-top: 10px; color: #b67c91; font-size: 9px; letter-spacing: .2em; }
+    .signature-note { margin-top: 5px; font-size: 12px; color: #8f6877; }
+
+    @media (max-width: 600px) {
+      body { align-items: flex-start; padding: 24px 12px; }
+      .container { margin: auto 0; }
+      .top-text { margin-bottom: 18px; }
+      .top-text .small { font-size: 9px; letter-spacing: .16em; }
+      .top-text p { font-size: 9px; letter-spacing: .12em; }
+      .card { padding: 27px 18px; }
+      .message { font-size: 12.5px; line-height: 1.9; }
+      .message p { margin-bottom: 14px; }
+      .quote { margin: 20px auto; padding: 15px; }
+      .flower-divider { letter-spacing: .18em; }
+      .secret { font-size: 12.5px; }
+      .btn { max-width: 100%; }
+      .date-pill { font-size: 9px; }
+    }
+    @media (max-width: 360px) {
+      body { padding-inline: 9px; }
+      .card { padding: 23px 14px; }
+      .name { font-size: 39px; }
+      .opening h1 { font-size: 43px; }
+      .opening-text { font-size: 12px; }
+      .top-text h1 { font-size: 47px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; scroll-behavior: auto !important; transition-duration: .01ms !important; }
+    }
+  </style>
+</head>
+<body>
+  <div id="opening" class="opening">
+    <div class="envelope-card">
+      <div class="opening-flower" aria-hidden="true">🌷</div>
+      <p class="eyebrow">A little surprise for you</p>
+      <h1>Haii, Tiaraaa! ♡</h1>
+      <p class="opening-text">Ada sesuatu yang spesial buat kamu. Buka pelan-pelan yaa, sayang. 💗</p>
+      <div class="envelope" aria-hidden="true">💌</div>
+      <button class="btn" type="button" onclick="openLetter()">Buka Pesan <span aria-hidden="true">♡</span></button>
+      <p class="opening-footer">Made with love, just for you ♡</p>
+    </div>
+  </div>
+
+  <main class="container" id="mainContent" aria-hidden="true">
+    <header class="top-text">
+      <div class="small">♡ A special day for you ♡</div>
+      <h1>Happy Birthday</h1>
+      <p>20 OKTOBER · YOUR SPECIAL DAY</p>
+      <div class="tiny-line" aria-hidden="true"></div>
+    </header>
+
+    <section class="card" aria-label="Ucapan ulang tahun untuk Tiara">
+      <div class="inner">
+        <div class="date-pill">✧ 20 OCTOBER · A DAY TO CELEBRATE YOU ✧</div>
+        <span class="heart" aria-hidden="true">♡</span>
+        <h2>Selamat Ulang Tahun,</h2>
+        <div class="name">Tiara Azita Safitri</div>
+        <div class="flower-divider" aria-hidden="true">🌸 ── ❀ ── 🌷</div>
+
+        <div class="message">
+          <p><strong>Happy birthday, my favorite person! 🎂🤍</strong></p>
+          <p>Haiii, sayangkuu, Tiara Azita Safitriii. Selamat ulang tahun yaa, cintakuuu. Semoga di usia baru ini kamu selalu bahagia, sehat, dilancarkan rezekinya, dan semua doa baikmu satu per satu dikabulkan oleh Allah. 🥹💗</p>
+          <p>Makasih yaa, sayang, udah hadir di hidup aku. Aku bersyukur banget bisa kenal kamu. Kehadiran kamu bikin hari-hari aku lebih berwarna dan bikin aku pengin terus belajar menjadi pribadi yang lebih baik. 🤍</p>
+          <p>Aku tahu aku masih punya banyak kekurangan, tapi aku mau terus belajar memahami kamu, menjaga kepercayaan kamu, dan mendukung impian kamu. Semoga kita bisa terus tumbuh bersama, saling menguatkan, dan saling mengingatkan dalam kebaikan. 🌷</p>
+          <p>Sekali lagi, happy birthday, sayangkuu. Jangan lupa bahagia yaa. Semoga Allah selalu menjaga kamu, dan semoga aku masih bisa menemani banyak cerita indah dalam hidup kamu. 💗</p>
+        </div>
+
+        <div class="quote">“I love you, more than these little words could ever explain.” 💗🌷</div>
+        <div class="flower-divider" aria-hidden="true">✿ ───── ♡ ───── ✿</div>
+        <div class="message"><p>Always be happy, my girl. Semoga hari-hari kamu selalu dipenuhi cinta, kebahagiaan, dan keberkahan. 🤍</p></div>
+        <div class="signature">With all my love ♡</div>
+        <div class="message"><p>Cowok yang selalu mendoakan yang terbaik buat kamu. 💗</p></div>
+
+        <button class="btn" id="secretButton" type="button" onclick="openSecret()" aria-expanded="false" aria-controls="secret">Buka Pesan Spesial 💌</button>
+        <div class="secret" id="secret" aria-live="polite" hidden>
+          <div style="font-size:30px; margin-bottom:10px;" aria-hidden="true">💗🌷💗</div>
+          <strong class="secret-title">A Little Secret for My Favorite Girl</strong>
+          <p>Tiara Azita Safitri, makasih udah hadir di hidup aku. Mengenal kamu adalah salah satu hal indah yang paling aku syukuri. 🤍</p>
+          <p>Aku mungkin nggak selalu pandai merangkai kata-kata, tapi aku ingin membuktikan rasa sayangku lewat perhatian, kejujuran, dan sikap aku ke kamu.</p>
+          <p>Semoga kita terus belajar menjadi lebih dewasa, saling percaya, saling mendukung, dan tumbuh menjadi lebih baik bersama. 🌷</p>
+          <p style="color:#bd597b; font-weight:600;">Happy birthday, Tiaraaa! Semoga kamu selalu bahagia. I love youuu! 💗</p>
+        </div>
+        <div class="bottom-heart">MADE WITH ♡ JUST FOR TIARA</div>
+        <div class="footer">A LITTLE GIFT FROM MY HEART</div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    function openLetter() {
+      const opening = document.getElementById('opening');
+      const content = document.getElementById('mainContent');
+      opening.classList.add('hide');
+      content.classList.add('show');
+      content.setAttribute('aria-hidden', 'false');
+      window.setTimeout(() => { opening.style.display = 'none'; }, 780);
+    }
+
+    function openSecret() {
+      const secret = document.getElementById('secret');
+      const button = document.getElementById('secretButton');
+      const isOpen = secret.hidden;
+      secret.hidden = !isOpen;
+      secret.classList.toggle('show', isOpen);
+      button.setAttribute('aria-expanded', String(isOpen));
+      button.textContent = isOpen ? 'Tutup Pesan Spesial 💗' : 'Buka Pesan Spesial 💌';
+      if (isOpen) {
+        secret.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block: 'nearest' });
+        createHearts();
+      }
+    }
+
+    const flowers = ['🌸', '🌷', '🌺', '✿', '❀'];
+    if (!reduceMotion) {
+      for (let i = 0; i < 18; i++) {
+        const petal = document.createElement('span');
+        petal.className = 'petal';
+        petal.setAttribute('aria-hidden', 'true');
+        petal.textContent = flowers[Math.floor(Math.random() * flowers.length)];
+        petal.style.left = Math.random() * 100 + 'vw';
+        petal.style.fontSize = (12 + Math.random() * 13) + 'px';
+        petal.style.animationDuration = (8 + Math.random() * 12) + 's';
+        petal.style.animationDelay = (Math.random() * 12) + 's';
+        document.body.appendChild(petal);
+      }
+
+      for (let i = 0; i < 13; i++) {
+        const sparkle = document.createElement('span');
+        sparkle.className = 'sparkle';
+        sparkle.setAttribute('aria-hidden', 'true');
+        sparkle.textContent = '✦';
+        sparkle.style.left = (5 + Math.random() * 90) + 'vw';
+        sparkle.style.top = (5 + Math.random() * 90) + 'vh';
+        sparkle.style.fontSize = (8 + Math.random() * 13) + 'px';
+        sparkle.style.animationDelay = (Math.random() * 3) + 's';
+        document.body.appendChild(sparkle);
+      }
+    }
+
+    function createHearts() {
+      if (reduceMotion) return;
+      for (let i = 0; i < 14; i++) {
+        const heart = document.createElement('span');
+        heart.textContent = ['💗', '💕', '♡', '🌸'][Math.floor(Math.random() * 4)];
+        heart.setAttribute('aria-hidden', 'true');
+        heart.style.cssText = `position:fixed; left:${Math.random() * 100}vw; bottom:-30px; font-size:${15 + Math.random() * 16}px; z-index:10; pointer-events:none;`;
+        document.body.appendChild(heart);
+        const animation = heart.animate([
+          { transform: 'translateY(0) rotate(0deg)', opacity: 1 },
+          { transform: `translateY(-${window.innerHeight + 100}px) rotate(${Math.random() * 360}deg)`, opacity: 0 }
+        ], { duration: 2600 + Math.random() * 1800, easing: 'ease-out' });
+        animation.onfinish = () => heart.remove();
+      }
+    }
+  </script>
+</body>
+</html>
